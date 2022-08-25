@@ -1,0 +1,67 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "newmr",
+  "title": "New MR Message",
+  "description": "Formats a new merge request message for slack",
+  "icon": "command-icon.png",
+  "author": "Alvi",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "index",
+      "title": "Get MR slack message",
+      "description": "Get the slack message for a specific merge request",
+      "mode": "no-view",
+      "arguments": [
+        {
+          "name": "mrID",
+          "placeholder": "MR ID",
+          "type": "text",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "preferences": [
+    {
+      "name": "gitlabToken",
+      "required": true,
+      "type": "textfield",
+      "title": "Gitlab token",
+      "description": "Your gitlab token"
+    },
+    {
+      "name": "projectID",
+      "required": true,
+      "type": "textfield",
+      "title": "Project ID",
+      "description": "Your project's ID on gitlab"
+    },
+    {
+      "name": "gitlabHost",
+      "required": true,
+      "type": "textfield",
+      "title": "Gitlab host",
+      "description": "Your gitlab instance URL"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.39.1",
+    "node-fetch": "^3.2.10"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "ray publish"
+  }
+}
